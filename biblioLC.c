@@ -117,4 +117,25 @@ Biblio* fusion_bibliotheque(Biblio* biblio1, Biblio* biblio2){
 
     return biblio1;
 }
+
+tableHachage_t* initTableHachage(int m) {
+    tableHachage_t* tableH = (tableHachage_t*)malloc(siezof(tableHachage_t));
+    tableH -> ne = 0;
+    tableH -> m = m;
+    tableH -> T = (cell_t**)malloc(sizeof(cell_t*)*m);
+    int i;
+    for (i=0,i<15,i++) {
+        (tableH -> T)[i] = NULL;
+    }
+}
+
+int fonctionClef(char *nom) {
+    int clef = 0;
+    int i;
+    for(i=0,i<strlen(nom),i++) {
+        clef = clef + nom[i];
+    }
+    return clef
+}
+
     
